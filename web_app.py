@@ -260,6 +260,9 @@ async def ask_agent(question: Question):
             content={"detail": str(e), "success": False}
         )
 
+# For Vercel serverless deployment
+app_instance = app
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
